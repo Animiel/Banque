@@ -2,9 +2,9 @@
 include 'Titulaire.php';
 include 'Compte_bancaire.php';
 
-$var = new DateTime("1999-11-23");
-$p1 = new Titulaire("NOM", "PRENOM", $var, "Strasbourg");
-$c1 = new Compte_bancaire("Libelle", "euros", $p1);
+$p1 = new Titulaire("NOM", "PRENOM", $var = new DateTime("1999-11-23"), "Strasbourg");
+$c1 = new Compte_bancaire("Livret A", "euros", $p1);
+$c2 = new Compte_bancaire("LEP", "euros", $p1);
 
-// echo $p1->listeComptes;
+echo $c1->detailCompte();
 ?>

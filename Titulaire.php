@@ -57,13 +57,23 @@ class Titulaire {
         return $age->format('%Y ans');
     }
 
-    public function __toString() {
-        return "Titulaire des comptes : $this->nom $this->prenom<br>
-        Date de naissance : $this->naissance<br>
-        Domicile : $this->ville<br>
-        Nombres de comptes :";          /*ajouter la fin*/
+    public function afficherTituComptes() {
+        
+        return $this."<br>";
     }
 
-    /*fonction Creer un compte*/
+    public function detailComptes(array $array1) {
+        foreach ($array1 as $compte) {
+            return;
+        }
+    }
+
+    public function __toString() {
+        return "Titulaire des comptes : $this->nom $this->prenom<br>
+        Date de naissance : ".$this->naissance->format("d/m/Y")."<br>
+        Age : ".$this->age()."<br>
+        Domicile : $this->ville<br>
+        Nombres de comptes : ".count($this->listeComptes)."<br>";
+    }
 }
 ?>
