@@ -6,5 +6,7 @@ $p1 = new Titulaire("NOM", "PRENOM", $var = new DateTime("1999-11-23"), "Strasbo
 $c1 = new Compte_bancaire("Livret A", "euros", $p1);
 $c2 = new Compte_bancaire("LEP", "euros", $p1);
 
-echo $c1->detailCompte();
+echo $p1->crediterCompte($c1, 1000);
+echo $p1->virement($c1, $c2, 500);
+echo $p1;
 ?>
